@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="main.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <form action="" class="search-bar">
+        <input type="text" placeholder="Search for location" />
+        <button type="submit">
+          <span class="material-icons-outlined search-icon"> search </span>
+        </button>
+      </form>
+      <select name="temp" id="temp-unit">
+        <option value="metric">°C</option>
+        <option value="imperial">°F</option>
+      </select>
+    </header>
+
+    <main class="containter">
+      <section class="location">
+        <h3></h3>
+      </section>
+      <section class="current">
+        <div class="title">
+          <h3>current weather</h3>
+          <p class="time"></p>
+        </div>
+        <div class="important-info">
+          <div class="temp">
+            <img src="" alt="weather image" class="weather-img" />
+            <div class="current-temp">
+              <div>
+                <span class="current-temprature"></span>
+                <span class="unit"></span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="condition"></p>
+            <p class="feels"></p>
+          </div>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="other-infos">
+          <div class="wind">
+            <p class="element">Wind</p>
+            <p class="value"></p>
+          </div>
+          <div class="humidity">
+            <p class="element">humidity</p>
+            <p class="value"></p>
+          </div>
+          <div class="visibility">
+            <p class="element">visibility</p>
+            <p class="value"></p>
+          </div>
+          <div class="pressure">
+            <p class="element">pressure</p>
+            <p class="value">1</p>
+          </div>
+        </div>
+      </section>
+      <section class="forecast">
+        <h3 class="forecast-header">5 day forecast</h3>
+        <div class="slider">
+          <button class="nav-btns prev">&#8249;</button>
+          <button class="nav-btns next">&#8250;</button>
+          <div class="card-container">
+            <div class="card">
+              <h4 class="date">today</h4>
+              <div class="temp-forcast">
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <div class="temp-info">
+                  <p class="high">21°</p>
+                  <p class="low">11°</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h4 class="date">tomorrow</h4>
+              <div class="temp-forcast">
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <div class="temp-info">
+                  <p class="high">20°</p>
+                  <p class="low">10°</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h4 class="date">Aug 5</h4>
+              <div class="temp-forcast">
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <div class="temp-info">
+                  <p class="high">22°</p>
+                  <p class="low">12°</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h4 class="date">Aug 6</h4>
+              <div class="temp-forcast">
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <div class="temp-info">
+                  <p class="high">24°</p>
+                  <p class="low">10°</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h4 class="date">Aug 7</h4>
+              <div class="temp-forcast">
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <div class="temp-info">
+                  <p class="high">19°</p>
+                  <p class="low">8°</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="hourly-forecast">
+        <h5 class="title">hourly</h5>
+        <div class="slider">
+          <button class="nav-btns prev">&#8249;</button>
+          <button class="nav-btns next">&#8250;</button>
+          <div class="card-container">
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="basic-hourly-info">
+                <p class="time">today</p>
+                <img
+                  src="https://openweathermap.org/img/wn/03d@2x.png"
+                  alt="weather-icon"
+                  srcset=""
+                />
+                <p class="description">sunny</p>
+                <p class="chance-of-rain">5%</p>
+                <p class="wind-speed">
+                  <span>20Km/h </span>
+                  <span class="material-icons-outlined"> send </span>
+                </p>
+              </div>
+              <div class="more-hourly-info-container">
+                <div class="more-hourly-info">
+                  <div class="fells">
+                    <span class="material-icons-outlined"> thermostat </span>
+                    <div>
+                      <p>feels like</p>
+                      <p class="value">19°</p>
+                    </div>
+                  </div>
+                  <div class="humidity">
+                    <span class="material-icons-outlined"> water_drop </span
+                    ><img src="" alt="" />
+                    <div>
+                      <p>humidity</p>
+                      <p class="value">75%</p>
+                    </div>
+                  </div>
+                  <div class="uv">
+                    <span class="material-icons-outlined"> light_mode </span>
+                    <div>
+                      <p>UV index</p>
+                      <p class="value">1</p>
+                    </div>
+                  </div>
+                  <div class="visibility">
+                    <span class="material-icons-outlined"> visibility </span>
+                    <div>
+                      <p>visibility</p>
+                      <p class="value">20 km</p>
+                    </div>
+                  </div>
+                  <div class="dew-point">
+                    <span class="material-icons-outlined"> water_drop </span>
+                    <div>
+                      <p>dew point</p>
+                      <p class="value">15°</p>
+                    </div>
+                  </div>
+                  <div class="cloud-cover">
+                    <span class="material-icons-outlined"> cloud </span>
+                    <div>
+                      <p>cloud cover</p>
+                      <p class="value">37%</p>
+                    </div>
+                  </div>
+                  <div class="wind-gust">
+                    <span class="material-icons-outlined"> air </span>
+                    <div>
+                      <p>wind gust</p>
+                      <p class="value">37 km/h</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

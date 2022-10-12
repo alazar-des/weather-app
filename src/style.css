@@ -1,0 +1,402 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.cloudy,
+body.rain,
+body.thunderstorm,
+body.snow {
+  --body-bg-color: #475775;
+  --current-bg-color: #394968;
+  --nav-bg-color: #54617a;
+  --search-bar-color: #68748a;
+  --forecast-color: #4D5C7A;
+  --forecast-active-color: #51607c;
+  --hourly-color: #52607d;
+  --nav-button-color: #51607c60;
+}
+
+body.haze {
+  --body-bg-color: #5b564f;
+  --current-bg-color: #58544a;
+  --nav-bg-color: #68645f;
+  --search-bar-color: #7a7672;
+  --forecast-color: #57544a;
+  --forecast-active-color: #636058;
+  --hourly-color: #534e43;
+  --nav-button-color: #63605860;
+}
+
+body.sunny {
+  --body-bg-color: #224f90;
+  --current-bg-color: #174385;
+  --current-bg-img: "https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Sunny.png";
+  --nav-bg-color: #325b8f;
+  --search-bar-color: #496e9d;
+  --forecast-color: #285695;
+  --forecast-active-color: #315e99;
+  --hourly-color: #305c97;
+  --nav-button-color: #315e9960;
+}
+
+body.clear-night {
+  --body-bg-color: #233d64;
+  --current-bg-color: #00000050;
+  --nav-bg-color: #364e6f;
+  --search-bar-color: #4d6480;
+  --forecast-color: #263c5f;
+  --forecast-active-color: #32486c;
+  --hourly-color: #324869;
+  --nav-button-color: #32486c60;
+}
+
+body {
+  font-family: Segoe UI, Segoe WP, Arial, Sans-Serif;
+  color: #fff;
+  background: var(--body-bg-color);
+}
+
+header {
+  background-color: var(--nav-bg-color);
+  padding: 1vh 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar {
+  background-color: var(--search-bar-color);
+  width: 100%;
+  max-width: 300px;
+  border-radius: 60px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #dcdcdc;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #dcdcdc;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #dcdcdc;
+}
+
+button[type="submit"] {
+  border: 0;
+  background-color: transparent;
+}
+
+.search-icon {
+  font-size: 16px;
+  color: #fff;
+}
+
+#temp-unit {
+  padding: 5px;
+  background-color: var(--search-bar-color);
+  color: #ffffff;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+}
+
+main {
+  padding: 3vh 15vw;
+}
+
+.current {
+  background-color: var(--current-bg-color);
+  background-image: url(https://assets.msn.com/weathermapdata/1/static/background/v2.0/compactads3/Sunny.png);
+  margin-top: 12px;
+  padding: 12px 48px 16px 24px;
+  display: grid;
+  gap: 20px;
+  border-radius: 8px;
+  background-size: cover;
+}
+
+.important-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 48px;
+}
+
+.current-temp div {
+  font-size: 48px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.current-temp .unit {
+  font-size: 28px;
+}
+
+.condition {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.feels {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.description {
+  font-weight: 600;
+}
+
+.other-infos {
+  display: flex;
+  gap: 2rem;
+}
+
+.temp {
+  display: flex;
+  gap: 8px;
+}
+
+.temp p {
+  font-size: 32px;
+}
+
+.temp p span {
+  font-size: 22px;
+}
+
+.title h3 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.time {
+  font-size: 14px;
+}
+
+.element {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.info-item .value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.forecast,
+.hourly-forecast {
+  margin-top: 16px;
+}
+
+.forecast h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.slider {
+  position: relative;
+}
+
+.card-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  padding: 0 0.5rem;
+  background-color: var(--forecast-color);
+  border-radius: 5px;
+  transition: left 250ms ease-out;
+}
+
+.forecast .card {
+  width: 120px;
+}
+
+.temp-forcast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover,
+.card:focus {
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  width: 0; 
+  height: 0;
+  overflow: visible;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-top: 5px solid #fff;
+}
+
+.card .date {
+  text-transform: capitalize;
+}
+
+.temp-forcast img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.temp-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 16px;
+}
+
+.nav-btns {
+  font-size: 1.2rem;
+  font-weight: 900;
+  background: var(--forecast-active-color);
+  border: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: #ffffff;
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 0.8rem);
+  box-shadow: 0 0 8px var(--forecast-active-color);
+  display: none;
+}
+
+.nav-btns.next.show,
+.nav-btns.prev.show {
+  display: block;
+}
+
+.nav-btns:hover {
+  outline: none;
+  border: 1px solid #ffffff70;
+  cursor: pointer;
+}
+
+.nav-btns.next {
+  right: -0.8rem;
+}
+
+.nav-btns.prev {
+  left: -0.8rem;
+}
+
+.hourly-forecast .card {
+  background-color: var(--forecast-active-color);
+  display: flex;
+}
+
+.hourly-forecast .title {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.basic-hourly-info {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.basic-hourly-info {
+  padding: 0.5rem;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 6.5rem;
+  width: 110px;
+}
+
+.basic-hourly-info img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.basic-hourly-info .wind-speed {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.basic-hourly-info .wind-speed span {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.chance-of-rain {
+  margin-top: 2rem;
+}
+
+.more-hourly-info-container {
+  border-left: 1px dashed #ffffff80;
+  width: 220px;
+  display: none;
+}
+
+.more-hourly-info-container.show {
+  display: block;
+}
+
+.more-hourly-info {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 12px 10px;
+}
+
+.more-hourly-info p {
+  font-size: 10px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.more-hourly-info > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: lighter;
+}
+
+.more-hourly-info span {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.more-hourly-info .value {
+  margin-top: 4px;
+  font-weight: 900;
+}
